@@ -1,0 +1,43 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Create Articles
+{% endblock %}
+
+{% block body %}
+    <br>
+<main class="container card">
+  <div class="card-header">
+    New Articles
+  </div>
+  <br>
+     <div>
+        <form {% if article %} action="/article/{{ article.id }}/update" {% else %} action="/article" {% endif %} method="POST">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Title</label>
+              <input type="text" class="form-control" name="title" id="exampleFormControlInput1" {% if article %} value="{{ article.title }}" {% endif %} >
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Body</label>
+              <textarea class="form-control" name="body" id="exampleFormControlTextarea1" rows="3">{% if article %} {{ article.body }} {% endif %}</textarea>
+            </div>
+            <div class="text-end">
+                <button type="submit" class="btn btn-warning">Save</button>
+            </div><br>
+        </form>
+     </div>
+</main>
+{% endblock %}
+
+
+
+
+
+
+
+<div class="card text-bg-light mb-3" style="max-width: 18rem;">
+  <div class="card-header"></div>
+        <h5 class="card-title">Primary card title</h5>
+
+  <div class="card-body">
+  </div>

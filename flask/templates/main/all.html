@@ -17,7 +17,9 @@ All Articles
       <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
         <div class="d-flex justify-content-between">
           <strong class="text-gray-dark">{{article.title }}</strong>
-          <a href="/article/{{ article.id }}">Read More</a>
+            <p><a href="/article/{{ article.id }}">Read More</a></p>
+            <p><a href="/article/{{ article.id }}/edit">Edit</a></p>
+            <p><a href="/article/{{ article.id }}/delete">Delete</a></p>
         </div>
         <span class="d-block">{{article.body }}</span>
       </div>
