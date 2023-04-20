@@ -1,0 +1,41 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Sign_up
+{% endblock %}
+
+{% block body %}
+<br>
+<div class="container card  p-3" style="width: 50rem;" >
+  <h1 class="text-center">Sign up</h1>
+  <form  action="/sign-up" method="POST"  class="row g-3">
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input type="email" class="form-control" name="email" id="inputEmail4">
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Password</label>
+      <input type="password" class="form-control" name="password" id="inputPassword4">
+    </div>
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">First Name</label>
+      <input type="text" class="form-control" name="first_name" id="inputAddress" placeholder="First Name">
+    </div>
+    <div class="col-12">
+      <label for="inputAddress2" class="form-label">Last Name</label>
+      <input type="text" class="form-control" name="last_name" id="inputAddress2" placeholder="Last Name">
+    </div>
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" required id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          I agree wiht trems and conditions
+        </label>
+      </div>
+    </div>
+    <div class="text-center col-12">
+      <button type="submit" class="btn btn-primary">Sign up</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

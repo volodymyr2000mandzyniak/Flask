@@ -1,3 +1,4 @@
+<div class="cl">
 {% extends 'main/base.html' %}
 
 {% block title %}
@@ -5,39 +6,70 @@ All Articles
 {% endblock %}
 
 {% block body %}
-<main class="container">
-  <div class="card">
-  <div class="card-header">
-    All Articles
-  </div>
-    {% for article in articles %}
-  <div class="my-3 p-3 bg-body rounded shadow-sm">
-    <div class="d-flex text-body-secondary pt-3">
-      <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
-      <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
-        <div class="d-flex justify-content-between">
-          <strong class="text-gray-dark">{{article.title }}</strong>
-            <p><a href="/article/{{ article.id }}">Read More</a></p>
-            <p><a href="/article/{{ article.id }}/edit">Edit</a></p>
-            <p><a href="/article/{{ article.id }}/delete">Delete</a></p>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-8">
+      <article>
+        <header class="mb-4">
+            <h1 class="fw-bolder text-center ">All Article!</h1><hr>
+        </header>
+            <section class="mb-5">
+                {% for article in articles %}
+                <div class="my-3 p-3 bg-body rounded shadow-sm alert alert-into">
+                  <div class="d-flex text-body-secondary pt-3">
+                    <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                      <div class="d-flex justify-content-between">
+                          <h3><a href="/article/{{ article.id }}">{{article.title }}</a></h3>
+                          <div class="text-down me-3 pt-3">
+                            <a class="badge rounded-pill bg-primary me-3 btn btn-outline-info" href="/article/{{ article.id }}/edit">Edit</a>
+                            <a class="badge rounded-pill bg-primary me-3 btn btn-outline-info" href="/article/{{ article.id }}/delete">Delete</a>
+                        </div>
+                      </div>
+                      <h5><span class="d-block">{{article.body }}</span></h5>
+                    </div>
+                  </div>
+                </div>
+                  {% endfor %}
+            </section>
+        </article>
+      </div>
+      <div class="col-lg-4">
+        <div class="card mb-4">
+          <div class="card-header">Search</div>
+            <div class="card-body">
+              <div class="d-flex" action="/search"  method="GET" role="search">
+                <form class="d-flex" action="/search"  method="GET" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" name="q" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+          </div>
         </div>
-        <span class="d-block">{{article.body }}</span>
+       <div class="card mb-4">
+         <div class="card-header">Categories</div>
+           <div class="card-body">
+             <div class="row">
+               <div class="col-sm-6">
+                  <ul class="list-unstyled mb-0">
+                    <li><a href="#!">Web Design</a></li>
+                    <li><a href="#!">HTML</a></li>
+                    <li><a href="#!">Freebies</a></li>
+                   </ul>
+               </div>
+               <div class="col-sm-6">
+               <ul class="list-unstyled mb-0">
+                <li><a href="#!">JavaScript</a></li>
+                <li><a href="#!">CSS</a></li>
+                <li><a href="#!">Tutorials</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-    {% endfor %}
-</main>
+</div>
+
 {% endblock %}
+</div>
 
-
-
-
-
-
-
-<div class="card text-bg-light mb-3" style="max-width: 18rem;">
-  <div class="card-header"></div>
-        <h5 class="card-title">Primary card title</h5>
-
-  <div class="card-body">
-  </div>

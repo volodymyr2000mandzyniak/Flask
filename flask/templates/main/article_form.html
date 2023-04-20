@@ -1,3 +1,5 @@
+<div class="cl">
+
 {% extends 'main/base.html' %}
 
 {% block title %}
@@ -6,10 +8,11 @@ Create Articles
 
 {% block body %}
     <br>
-<main class="container card">
+<main class="container card" style="width: 50rem;">
   <div class="card-header">
     New Articles
   </div>
+
   <br>
      <div>
         <form {% if article %} action="/article/{{ article.id }}/update" {% else %} action="/article" {% endif %} method="POST">
@@ -21,6 +24,11 @@ Create Articles
               <label for="exampleFormControlTextarea1" class="form-label">Body</label>
               <textarea class="form-control" name="body" id="exampleFormControlTextarea1" rows="3">{% if article %} {{ article.body }} {% endif %}</textarea>
             </div>
+                <select class="form-select" aria-label="Default select example">
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select><br>
             <div class="text-end">
                 <button type="submit" class="btn btn-warning">Save</button>
             </div><br>
@@ -28,16 +36,8 @@ Create Articles
      </div>
 </main>
 {% endblock %}
+</div>
 
 
 
 
-
-
-
-<div class="card text-bg-light mb-3" style="max-width: 18rem;">
-  <div class="card-header"></div>
-        <h5 class="card-title">Primary card title</h5>
-
-  <div class="card-body">
-  </div>

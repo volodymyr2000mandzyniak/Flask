@@ -1,3 +1,5 @@
+<div class="cl">
+
 {% extends 'main/base.html' %}
 
 {% block title %}
@@ -5,7 +7,7 @@ Article id
 {% endblock %}
 
 {% block body %}
-    <div class="container card text-center">
+    <div class="container card text-center" style="width: 50rem;">
       <div class="text-bg-light mb-3" style="max-width: 100rem;">
         <div class="card-header">Your Article</div>
           <h1>{{article.title }}</h1>
@@ -18,3 +20,4 @@ Article id
     </div>
 
 {% endblock %}
+</div>

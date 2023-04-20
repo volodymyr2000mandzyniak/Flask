@@ -1,1 +1,2 @@
-from .models import *
+from .articles.models import *
+from .users.models import *

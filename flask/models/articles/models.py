@@ -1,10 +1,11 @@
 from app import db
-
+from datetime import datetime
 
 class Article(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
     body = db.Column(db.Text, nullable=False)
+    #category_id = db.Column(db.Integer, db.ForeignKey('article.id'))
 
     @property
     def serialize(self):
@@ -15,6 +16,3 @@ class Article(db.Model):
         }
 
 
-# class Category(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     title = db.Column(db.String(100), nullable=False)
